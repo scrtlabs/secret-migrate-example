@@ -22,5 +22,5 @@ pub enum QueryMsg {}
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum FirstContractQueryMsg {
-    Migrate { secret: Binary },
+    ExportedData { secret: Binary },
 }

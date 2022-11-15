@@ -75,7 +75,7 @@ fn migrate<S: Storage, A: Api, Q: Querier>(
     let _response: ExportData = deps.querier.query(&QueryRequest::Wasm(WasmQuery::Smart {
         contract_addr: state.first_contract_addr,
         callback_code_hash: state.first_contract_hash,
-        msg: to_binary(&FirstContractQueryMsg::Migrate { secret })?,
+        msg: to_binary(&FirstContractQueryMsg::ExportedData { secret })?,
     }))?;
 
     // TODO store the exported data in this contract's state.
